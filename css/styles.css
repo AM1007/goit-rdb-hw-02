@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #3b3b3b;
+  -webkit-font-smoothing: antialiased;
+  background: #2b2b2b;
+}
+@media screen and (max-width: 580px) {
+  body {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.title {
+  margin: 20px auto;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f2f2f2;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table__title {
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #f2f2f2;
+}
+
+.title__row {
+  border: 1px solid #f2f2f2;
+  text-transform: capitalize;
+  color: #f2f2f2;
+  padding: 8px 16px;
+}
+
+.table {
+  margin: 0 0 24px 0;
+  width: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+.table:last-child {
+  margin: 0;
+}
+@media screen and (max-width: 580px) {
+  .table {
+    display: block;
+  }
+}
+
+.row {
+  display: table-row;
+  background-color: #cccccc;
+  transition: background-color 250ms ease-in-out;
+}
+.row:nth-of-type(odd) {
+  background: #edebeb;
+}
+.row.header {
+  pointer-events: none;
+  font-weight: 900;
+  color: #ffffff;
+  background: #ea6153;
+}
+.row.green {
+  background: #27ae60;
+}
+.row.blue {
+  background: #2980b9;
+}
+.row.yellow {
+  background: #ada738;
+}
+.row:hover {
+  background-color: #ffffff;
+}
+@media screen and (max-width: 580px) {
+  .row {
+    padding: 14px 0 7px;
+    display: block;
+  }
+  .row.header {
+    padding: 0;
+    height: 6px;
+  }
+  .row.header .cell {
+    display: none;
+  }
+  .row .cell {
+    margin-bottom: 10px;
+  }
+  .row .cell:before {
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #969696;
+    display: block;
+  }
+}
+
+.cell {
+  padding: 6px 12px;
+  text-align: center;
+}
+@media screen and (max-width: 580px) {
+  .cell {
+    padding: 2px 16px;
+    display: block;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.table__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.empty {
+  background-color: #2b2b2b;
+  color: transparent;
+  height: 2em;
+}
+
+.button {
+  display: block;
+  margin-bottom: 2em;
+  width: 220px;
+  cursor: pointer;
+  border: 1px solid #f2f2f2;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: #f2f2f2;
+  padding: 8px 16px;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+}
+.button:hover, .button:focus {
+  background-color: #f2f2f2;
+  color: #2b2b2b;
+}
+
+.modal-open {
+  padding: 8px 16px;
+  background: royalblue;
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  z-index: 2;
+  display: none;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background: #fff;
+  margin-top: 100px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 24px;
+  border-radius: 4px;
+  z-index: 4;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  text-transform: capitalize;
+  padding: 10px 0;
+  font-size: 26px;
+}
+
+.modal-header .modal-clos {
+  float: right;
+  font-size: 20px;
+  background: #efefef;
+  border: 0;
+  outline: 0;
+  padding: 5px 8px;
+  border-radius: 50%;
+}
+
+.modal-body {
+  color: #7b7b7b;
+  padding: 15px 0;
+}
+
+.modal-footer {
+  padding: 15px 0;
+}
+
+.modal-footer .modal-close {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #1a73e8;
+}
+
+.icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.3s;
+}
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.modal__image {
+  width: 100%;
+  border: 1px solid #cccccc;
+}
+
+.btn__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}/*# sourceMappingURL=styles.css.map */
