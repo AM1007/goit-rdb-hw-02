@@ -1,4 +1,4 @@
-// Получение кнопок для открытия модального окна
+// Getting buttons to open a modal window
 const modalBtns = document.querySelectorAll(".js-modal-open");
 
 modalBtns.forEach(function (btn) {
@@ -9,7 +9,7 @@ modalBtns.forEach(function (btn) {
   });
 });
 
-// Получение кнопок для закрытия модального окна
+// Getting buttons to close a modal window
 const closeBtns = document.querySelectorAll(".modal-close");
 
 closeBtns.forEach(function (btn) {
@@ -25,18 +25,12 @@ window.onclick = function (e) {
   }
 };
 
-// Открытие модального окна
+// Opening a modal window
 function openModal() {
-  // Добавить класс на <body> для запрета прокрутки заднего фона
   document.body.classList.add("modal-open");
-  // Открыть модальное окно
-  // your code here
 }
 
-// Закрытие модального окна
+// Closing a modal window
 function closeModal() {
-  // Удалить класс с <body> для разрешения прокрутки заднего фона
   document.body.classList.remove("modal-open");
-  // Закрыть модальное окно
-  // your code here
 }
